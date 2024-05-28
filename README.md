@@ -1,1 +1,1 @@
-# nixos
+# Tentando fazer uma cfg decente
