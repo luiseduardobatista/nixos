@@ -12,7 +12,22 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       lib = nixpkgs.lib;
+      username = "luisb";
     in {
+    users.users.${username} = {
+      isNormalUser = true;
+      initialPassword = username;
+      extraGroups = [
+        "nixosvmtest"
+        "networkmanager"
+        "wheel"
+        "audio"
+        "video"
+        "libvirtd"
+        "docker"
+      ];
+    };
+
     nixosConfigurations = {
         nixos = lib.nixosSystem {
           inherit system;
