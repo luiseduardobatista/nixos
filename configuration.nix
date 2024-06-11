@@ -6,9 +6,11 @@
       /etc/nixos/hardware-configuration.nix
       ./system/hosts.nix
       ./system/desktop.nix
+      ./system/i3wm.nix
     ];
 
   nvidiaDesktop.enable = true;
+  i3Desktop.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
